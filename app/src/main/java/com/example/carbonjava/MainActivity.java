@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Button buttonsingup;
-    private Button buttonguest;
     private Button buttonlogin;
     public String email;
     public String password;
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
         editTextEmail= findViewById(R.id.editTextEmailLogin);
         editTextPassword= findViewById(R.id.editTextPasswordLogin);
-        buttonguest= findViewById(R.id.buttonguest);
         buttonlogin= findViewById(R.id.buttonlogin);
         buttonsingup= findViewById(R.id.buttonsingup);
 
