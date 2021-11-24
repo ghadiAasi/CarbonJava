@@ -1,105 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/loginback"
     tools:context=".MainActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="650dp"
-        android:orientation="vertical"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/nameLogo"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="35dp"
-            android:text="CarbonJva"
-            android:textSize="70dp"
-            android:shadowColor="@color/black"
-            android:textColor="@color/black"
-            android:textStyle="italic" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="35dp"
         android:text="Login"
-        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="30dp"
-        />
+        android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextEmailLogin"
-            android:layout_width="285dp"
-            android:layout_height="60dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/rounded_corner"
-            android:hint="Email"
-            android:inputType="textPassword"
-            android:paddingStart="5dp"
-            android:paddingLeft="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="17sp" />
+    <EditText
+        android:id="@+id/editTextEmailLogin"
+        android:layout_width="243dp"
+        android:layout_height="55dp"
+        android:layout_gravity="left"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginVertical="10dp"
+        android:background="#AA8652"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="15dp"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="20dp" />
 
         <EditText
             android:id="@+id/editTextPasswordLogin"
             android:layout_width="285dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
-            android:background="@drawable/rounded_corner"
             android:hint="password"
-            android:inputType="textEmailAddress"
-            android:paddingStart="5dp"
+            android:paddingStart="15dp"
             android:paddingLeft="10dp"
-            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:background="#AA8652"
             android:textColorHint="@color/black"
-            android:textSize="17sp" />
+             />
+        <EditText
+            android:id="@+id/editTextPasswordLoginConfirm"
+            android:layout_width="285dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="#AA8652"
+            android:hint="Confirm password"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/black"
+            />
 
         <Button
             android:id="@+id/buttonlogin"
             android:layout_width="170dp"
             android:layout_height="50dp"
             android:onClick="login"
-            android:text="Login" />
+            android:background="@drawable/button"
+            android:text="Login"
+            />
 
-        <TextView
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Forgot Password"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Forgot Password"
-            android:textColor="@color/black" />
-        <Button
-        android:id="@+id/buttonsingup"
-        android:layout_width="170dp"
+    <TextView
+        android:layout_width="168dp"
         android:layout_height="50dp"
-        android:onClick="signup"
-        android:text="Signup" />
+        android:layout_marginTop="13dp"
+        android:minHeight="48dp"
+        android:onClick="ForgotPass"
+        android:text="Forgot Password"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/buttonsingup"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:onClick="signup"
+            android:text="Signup"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button" />
+        <Button
+            android:id="@+id/buttonguest"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:onClick="guest"
+            android:background="@drawable/button"
+            android:text="inter guest"
+             />
 </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_logindown" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="0" />
-    </LinearLayout>
-</RelativeLayout>

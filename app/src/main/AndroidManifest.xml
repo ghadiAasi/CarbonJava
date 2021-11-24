@@ -9,11 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonJava">
+        <service
+            android:name=".MusicService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
-            android:name=".ProfileCamera"
+            android:name=".InrollVideoActivity"
             android:exported="true" />
         <activity
-            android:name=".ActivitySidePage"
+            android:name=".BarActivityWelcome"
+            android:exported="true"
+            android:label="@string/title_activity_bar_welcome"
+            android:theme="@style/Theme.CarbonJava.NoActionBar" />
+        <activity
+            android:name=".ForgotActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ProfileCamera"
             android:exported="true" />
         <activity
             android:name=".ArrayListActivity1"

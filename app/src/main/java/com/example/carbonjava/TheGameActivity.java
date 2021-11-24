@@ -9,5 +9,7 @@ public class TheGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_the_game);
+
+        //Todo to update the level of the game according to the user progress
     }
 }
