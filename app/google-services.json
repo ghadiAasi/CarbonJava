@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718415038529",
+    "project_id": "carbonjava-4211d",
+    "storage_bucket": "carbonjava-4211d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718415038529:android:b2a0372122392940f51ec0",
+        "android_client_info": {
+          "package_name": "com.example.carbonjava"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718415038529-2scn1iqjd091fb9rm927uabog5nih2ui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqbxFbpXStEEqVKeHklEWU4zfyAjV2Lgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718415038529-2scn1iqjd091fb9rm927uabog5nih2ui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
