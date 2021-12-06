@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.carbonjava">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonJava">
+
+        <service
+            android:name=".NotificationService"
+            android:exported="false" />
         <service
             android:name=".MusicService"
             android:enabled="true"
-            android:exported="true"></service>
-
-        <activity
-            android:name=".InrollVideoActivity"
             android:exported="true" />
+
         <activity
             android:name=".BarActivityWelcome"
             android:exported="true"
@@ -30,9 +33,6 @@
             android:exported="true" />
         <activity
             android:name=".ArrayListActivity1"
-            android:exported="true" />
-        <activity
-            android:name=".TheExamsActivity"
             android:exported="true" />
         <activity
             android:name=".StorageActivity"
@@ -51,6 +51,9 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,6 +61,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".NotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -5,92 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/loginback"
+    android:gravity="bottom"
+    android:background="@drawable/loginbackground"
     tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="35dp"
-        android:text="Login"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editTextEmailLogin"
-        android:layout_width="243dp"
-        android:layout_height="55dp"
-        android:layout_gravity="left"
-        android:layout_marginHorizontal="60dp"
-        android:layout_marginVertical="10dp"
-        android:background="#AA8652"
+        android:layout_width="285dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="#C1E0E6"
         android:hint="Email"
+
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
         android:paddingLeft="10dp"
-        android:textColorHint="@color/black"
-        android:textSize="20dp" />
+        android:textColorHint="#143C3C"
+        android:textSize="23dp" />
 
         <EditText
             android:id="@+id/editTextPasswordLogin"
             android:layout_width="285dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_margin="5dp"
             android:hint="password"
             android:paddingStart="15dp"
             android:paddingLeft="10dp"
             android:inputType="textPassword"
-            android:background="#AA8652"
-            android:textColorHint="@color/black"
+            android:background="#C1E0E6"
+            android:textColorHint="#143C3C"
+            android:textSize="23dp"
              />
         <EditText
             android:id="@+id/editTextPasswordLoginConfirm"
             android:layout_width="285dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#AA8652"
+            android:background="#C1E0E6"
             android:hint="Confirm password"
             android:inputType="textPassword"
             android:paddingStart="15dp"
             android:paddingLeft="10dp"
-            android:textColorHint="@color/black"
-            />
+            android:textColorHint="#143C3C"
+            android:textSize="23dp" />
 
-        <Button
-            android:id="@+id/buttonlogin"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:onClick="login"
-            android:background="@drawable/button"
-            android:text="Login"
-            />
+    <Button
+        android:id="@+id/buttonlogin"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:onClick="login"
+        android:layout_gravity="center"
+        android:textColor="#C1E0E6"
+        android:textSize="18dp"
+        android:text="Login" />
 
     <TextView
         android:layout_width="168dp"
         android:layout_height="50dp"
-        android:layout_marginTop="13dp"
-        android:minHeight="48dp"
+        android:layout_marginTop="5dp"
+        android:minHeight="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
         android:onClick="ForgotPass"
         android:text="Forgot Password"
         android:textColor="@color/black"
         android:textSize="18dp" />
 
-        <Button
-            android:id="@+id/buttonsingup"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:onClick="signup"
-            android:text="Signup"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/button" />
-        <Button
-            android:id="@+id/buttonguest"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:onClick="guest"
-            android:background="@drawable/button"
-            android:text="inter guest"
-             />
 </LinearLayout>

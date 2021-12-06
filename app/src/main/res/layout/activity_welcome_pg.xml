@@ -1,77 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".WelcomePG"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C1E0E6"
+    android:gravity="bottom"
     android:orientation="vertical"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="800dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:context=".WelcomeActivity">
+                <Button
+                    android:id="@+id/buttonPlay"
+                    android:layout_width="184dp"
+                    android:layout_height="113dp"
+                    android:layout_marginTop="70dp"
+                    android:gravity="center"
+                    android:onClick="game"
+                    android:text="Play"
+                    android:textSize="25dp" />
 
-        <Button
-            android:id="@+id/buttonPlay"
-            android:layout_width="match_parent"
-            android:layout_height="165dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="70dp"
-            android:gravity="center"
-            android:onClick="game"
-            android:text="Play"
-            android:textSize="35dp"
-            />
+                <Button
+                    android:id="@+id/buttonExams"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    android:onClick="miniGames"
+                    android:text="mini games"
 
-        <Button
-            android:id="@+id/buttonExams"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_gravity="left"
-            android:gravity="center"
-            android:onClick="exams"
-            android:text="Exams"
+                    tools:layout_editor_absoluteX="162dp"
+                    tools:layout_editor_absoluteY="102dp" />
 
-            tools:layout_editor_absoluteX="162dp"
-            tools:layout_editor_absoluteY="102dp" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+ android:id="@+id/bottomNavigationView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#23B1CD"
+    app:menu="@menu/bottomnavegtire" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:navGraph="@navigation/my_nav"
 
-        <Button
-            android:id="@+id/buttonProfile"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_gravity="left"
-            android:onClick="profile"
-            android:text="Profile"
+        />
+        </LinearLayout>
 
-            tools:layout_editor_absoluteX="165dp"
-            tools:layout_editor_absoluteY="60dp" />
-
-
-        <Button
-            android:id="@+id/buttonStorage"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_gravity="left"
-            android:gravity="center"
-            android:onClick="storage"
-            android:text="storage"
-
-            tools:layout_editor_absoluteX="162dp"
-            tools:layout_editor_absoluteY="102dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="vertical">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="0" />
-    </LinearLayout>
-</RelativeLayout>

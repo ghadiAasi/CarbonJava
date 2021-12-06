@@ -3,6 +3,7 @@ package com.example.carbonjava;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,13 +16,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class WelcomePG extends AppCompatActivity implements DialogInterface.OnClickListener {
     private TextView textViewWelcome;
     public Button buttonPlay;
-    public Button buttonProfile;
-    public Button buttonStorage;
     public Button buttonExam;
     private Intent musicIntent;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,17 +32,41 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
      //   textViewWelcome= findViewById(R.id.textViewWelcome);
         buttonPlay = findViewById(R.id.buttonPlay);
         buttonExam= findViewById(R.id.buttonExams);
-        buttonProfile =findViewById(R.id.buttonProfile);
-        buttonStorage = findViewById(R.id.buttonStorage);
 
         String email =getIntent().getStringExtra("email");
         String password= getIntent().getStringExtra("password");
         String name= getIntent().getStringExtra("name");
-        textViewWelcome.setText("Welcome"+ name);
 
         musicIntent = new Intent(this,MusicService.class);
         startService(musicIntent);
+        // gotog=findViewById(R.id.gotog);
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                    Fragment selectedFragment = null;
+                    switch (item.getItemId()) {
+                        case R.id.messagesFragment:
+                            selectedFragment = new messagesFragment();
+                            break;
+                        case R.id.gameFragment:
+                            selectedFragment = new MiniGamesFragment();
+                            break;
+
+                        case R.id.profileFragment:
+                            selectedFragment = new ProfileFragment();
+                            break;
+
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, selectedFragment).commit();
+                    return true;
+                }
+                };
+
     public void onClick(DialogInterface dialogInterface, int i){
         if(i==dialogInterface.BUTTON_POSITIVE){
             super.onBackPressed();
@@ -86,24 +113,6 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         intent.putExtra("level", level);
         startActivity(intent);
     }
-
-    public void storage(View view) {
-        Intent intent = new Intent(this,StorageActivity.class);
-        startActivity(intent);
+    public void miniGames(View view) {
     }
-
-    public void exams(View view) {
-        Intent intent = new Intent(this,InrollVideoActivity.class);
-        startActivity(intent);
-    }
-
-    public void profile(View view) {
-        Intent intent = new Intent(this,ProfileActivity.class);
-        startActivity(intent);
-    }
-    public void back(View view){
-
-    }
-
-
 }
