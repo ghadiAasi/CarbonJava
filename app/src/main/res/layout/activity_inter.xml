@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/interbackground"
+    tools:context=".InterActivity">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="174dp"
+        android:layout_height="58dp"
+        android:textColor="#C1E0E6"
+        android:layout_marginBottom="10dp"
+        android:onClick="guest"
+        android:background="@drawable/button"
+        android:text="inter as a guest" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="142dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button"
+        android:onClick="interacccount"
+        android:text="login"
+        android:textColor="#C1E0E6" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button"
+        android:text="Create an account"
+        android:onClick="signup"
+        android:textColor="#C1E0E6" />
+</LinearLayout>
