@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/forgotpasswordbackground"
+    android:background="@drawable/backgroundforgot"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".ForgotActivity">
@@ -14,7 +14,7 @@
         android:id="@+id/textViewForgot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_marginHorizontal="20dp"
         android:textSize="25dp"
         android:layout_marginBottom="20dp"
@@ -22,8 +22,8 @@
 
     <EditText
         android:id="@+id/editTextEmailLoginForgot"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_width="371dp"
+        android:layout_height="59dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="20dp"
         android:background="#C1E0E6"
@@ -33,21 +33,22 @@
         android:paddingLeft="10dp"
         android:textColorHint="#143C3C"
         android:textSize="23dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="51dp"
 
+        android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="40dp"
         android:text="write your email or phone number and we will send you a mail to change your password"
-        android:textColor="#545454"
-        android:layout_marginHorizontal="20dp"
+        android:textColor="@color/white"
         android:textSize="15dp" />
 
     <EditText
         android:id="@+id/editTextTextphone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="371dp"
+        android:layout_height="54dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="30dp"
         android:background="#C1E0E6"
@@ -56,19 +57,19 @@
         android:paddingStart="15dp"
         android:paddingLeft="10dp"
         android:textColorHint="#143C3C"
-        android:textSize="23dp"  />
+        android:textSize="23dp" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="283dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="115dp"
-        android:onClick="send"
-        android:background="@drawable/button"
+        android:layout_width="364dp"
+        android:layout_height="45dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="115dp"
+        android:background="@drawable/button"
+        android:onClick="send"
+        android:text="send mail / massage"
         android:textColor="#C1E0E6"
-        android:textSize="18dp"
-        android:text="send mail / massage" />
+        android:textSize="18dp" />
 
 
 </LinearLayout>

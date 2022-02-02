@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/interbackground"
+    android:background="@drawable/backgroundinter"
     tools:context=".InterActivity">
 
     <Button
@@ -14,6 +14,7 @@
         android:layout_width="174dp"
         android:layout_height="58dp"
         android:textColor="#C1E0E6"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
         android:onClick="guest"
         android:background="@drawable/button"
@@ -31,11 +32,11 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="195dp"
-        android:layout_height="wrap_content"
+        android:layout_width="179dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/button"
-        android:text="Create an account"
         android:onClick="signup"
+        android:text="Create an account"
         android:textColor="#C1E0E6" />
 </LinearLayout>

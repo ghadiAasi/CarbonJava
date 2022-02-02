@@ -12,6 +12,9 @@ public class Item {
         this.isHappy = isHappy;
         this.amount = amount;
     }
+    public Item(){
+
+    }
 
     public String getDescription() {
         return description;

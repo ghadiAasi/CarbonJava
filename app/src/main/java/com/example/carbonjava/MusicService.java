@@ -19,7 +19,7 @@ public class MusicService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        mediaPlayer = MediaPlayer.create(this,R.raw.supermario);
+        mediaPlayer = MediaPlayer.create(this,R.raw.backgroundmusic);
         mediaPlayer.setLooping(true);
         mediaPlayer.setVolume(100,100);
     }

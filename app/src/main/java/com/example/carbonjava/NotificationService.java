@@ -33,7 +33,7 @@ public class NotificationService extends IntentService {
         //Todo need to change title
         noBuilder.setContentTitle("CarbonJava ");
         noBuilder.setContentTitle("this is the notify");
-        noBuilder.setSmallIcon(R.drawable.ic_baseline_adb_24);
+        noBuilder.setSmallIcon(R.drawable.ic_baseline_chat_24);
         //this intent will be pending until the user clicks on the notification and will activate the activity specified in the intent
         Intent noIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 2, noIntent, PendingIntent.FLAG_UPDATE_CURRENT);

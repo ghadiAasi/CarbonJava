@@ -11,6 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonJava">
+        <activity
+            android:name=".ShotsGame"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".GameOver"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ShotsGameMain"
+            android:exported="true"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TickTack"
+            android:exported="true" />
 
         <service
             android:name=".NotificationService"
@@ -35,13 +48,7 @@
             android:name=".ArrayListActivity1"
             android:exported="true" />
         <activity
-            android:name=".StorageActivity"
-            android:exported="true" />
-        <activity
             android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".TheGameActivity"
             android:exported="true" />
         <activity
             android:name=".SignUpActivity"

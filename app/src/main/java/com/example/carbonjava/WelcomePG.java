@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,14 +23,13 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
     public Button buttonExam;
     private Intent musicIntent;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_pg);
      //   textViewWelcome= findViewById(R.id.textViewWelcome);
         buttonPlay = findViewById(R.id.buttonPlay);
-        buttonExam= findViewById(R.id.buttonExams);
+        buttonExam= findViewById(R.id.buttonTicktack);
 
         String email =getIntent().getStringExtra("email");
         String password= getIntent().getStringExtra("password");
@@ -39,33 +37,30 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
 
         musicIntent = new Intent(this,MusicService.class);
         startService(musicIntent);
-        // gotog=findViewById(R.id.gotog);
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new GamesFragment()).commit();
     }
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                    Fragment selectedFragment = null;
-                    switch (item.getItemId()) {
-                        case R.id.messagesFragment:
-                            selectedFragment = new messagesFragment();
-                            break;
-                        case R.id.gameFragment:
-                            selectedFragment = new MiniGamesFragment();
-                            break;
-
-                        case R.id.profileFragment:
-                            selectedFragment = new ProfileFragment();
-                            break;
-
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, selectedFragment).commit();
-                    return true;
-                }
-                };
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+            switch (item.getItemId()){
+                case R.id.nav_game:
+                    selectedFragment = new GamesFragment();
+                    break;
+                case R.id.nav_chat:
+                    selectedFragment = new SmartGamesFragment();
+                    break;
+                case R.id.nav_profile:
+                    selectedFragment = new ProfileFragment();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+            return true;
+        }
+    };
 
     public void onClick(DialogInterface dialogInterface, int i){
         if(i==dialogInterface.BUTTON_POSITIVE){
@@ -106,13 +101,15 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
     }
 
     public void game(View view) {
-        SharedPreferences settings = getSharedPreferences("settings",MODE_PRIVATE);
-        int level  = settings.getInt("level", 0);
+        //SharedPreferences settings = getSharedPreferences("settings",MODE_PRIVATE);
+        //int level  = settings.getInt("level", 0);
 
-        Intent intent = new Intent(this,TheGameActivity.class);
-        intent.putExtra("level", level);
+        Intent intent = new Intent(this,ShotsGame.class);
+        //intent.putExtra("level", level);
         startActivity(intent);
     }
-    public void miniGames(View view) {
+    public void tickTack(View view) {
+        Intent intent = new Intent(this,TickTack.class);
+        startActivity(intent);
     }
 }

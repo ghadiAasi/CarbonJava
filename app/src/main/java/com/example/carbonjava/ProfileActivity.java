@@ -18,4 +18,9 @@ public class ProfileActivity extends AppCompatActivity {
         Intent intent =new Intent(this,ProfileCamera.class);
         startActivity(intent);
     }
+
+    public void Array(View view) {
+        Intent intent =new Intent(this,ArrayListActivity1.class);
+        startActivity(intent);
+    }
 }
