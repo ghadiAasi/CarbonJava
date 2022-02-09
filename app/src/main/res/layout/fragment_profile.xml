@@ -16,15 +16,6 @@
         android:layout_marginTop="60dp"
         android:src="@drawable/background" />
 
-    <Button
-        android:id="@+id/buttonCamera"
-        android:layout_width="34dp"
-        android:layout_height="28dp"
-        android:layout_below="@+id/SecondText"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button"
-        android:onClick="camera" />
-
     <TextView
         android:id="@+id/FirstText"
         android:layout_width="wrap_content"
@@ -43,7 +34,14 @@
         android:text="the users email"
         android:textSize="20dp"
         />
-
+    <Button
+        android:id="@+id/buttonCamera"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/SecondText"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_baseline_camera_alt_24"
+        />
     <androidx.cardview.widget.CardView
         android:layout_width="385dp"
         android:layout_height="400dp"
@@ -88,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="85dp"
             android:layout_marginTop="320dp"
-            android:onClick="Array"
+            android:id="@+id/Array"
             android:text="ScreenShots"
             android:textSize="20dp" />
 

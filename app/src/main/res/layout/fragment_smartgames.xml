@@ -26,7 +26,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="25sp"
-            android:onClick="sudoku"
+            android:id="@+id/sudoku"
             app:cardCornerRadius="8sp"
             app:cardElevation="8sp">
 
@@ -49,7 +49,7 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="25sp"
-            android:onClick="tickTack"
+            android:id="@+id/tickTack"
             android:layout_marginBottom="150dp"
             app:cardCornerRadius="8sp"
             app:cardElevation="8sp">

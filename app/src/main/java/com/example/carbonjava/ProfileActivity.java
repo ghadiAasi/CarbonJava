@@ -13,14 +13,4 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
     }
-
-    public void camera(View view) {
-        Intent intent =new Intent(this,ProfileCamera.class);
-        startActivity(intent);
-    }
-
-    public void Array(View view) {
-        Intent intent =new Intent(this,ArrayListActivity1.class);
-        startActivity(intent);
-    }
 }

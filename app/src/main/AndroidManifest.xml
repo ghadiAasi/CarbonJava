@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonJava">
         <activity
+            android:name=".SudokuActivity"
+            android:exported="true" />
+        <activity
             android:name=".SmartGames"
             android:exported="true" />
         <activity
