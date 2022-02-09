@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonJava">
         <activity
+            android:name=".SmartGames"
+            android:exported="true" />
+        <activity
             android:name=".ShotsGame"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".GameOver"
             android:screenOrientation="landscape" />

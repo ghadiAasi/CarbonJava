@@ -101,11 +101,7 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
     }
 
     public void game(View view) {
-        //SharedPreferences settings = getSharedPreferences("settings",MODE_PRIVATE);
-        //int level  = settings.getInt("level", 0);
-
         Intent intent = new Intent(this,ShotsGame.class);
-        //intent.putExtra("level", level);
         startActivity(intent);
     }
     public void tickTack(View view) {

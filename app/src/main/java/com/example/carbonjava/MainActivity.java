@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         SharedPreferences settings = getSharedPreferences("settings", MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("email", editTextEmail.getText().toString());
+        editor.putString("password", editTextPassword.getText().toString());
+        editor.putString("password", editTextPasswordConform.getText().toString());
+
         intent.putExtra("email", editTextEmail.getText().toString());
 
         editor.commit();
@@ -89,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
     }
         public void login(String email,String password){
-            mAuth.createUserWithEmailAndPassword(email, password)
+            mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

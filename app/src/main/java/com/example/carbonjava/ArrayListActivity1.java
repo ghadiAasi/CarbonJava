@@ -35,12 +35,6 @@ public class ArrayListActivity1 extends AppCompatActivity  {
 
         list = new ArrayList<>();
         list.add(new Item("this is my first Item",R.drawable.download, true,50));
-        list.add(new Item("this is my first Item",R.drawable.download, true,50));
-        list.add(new Item("this is my first Item",R.drawable.download, true,50));
-        list.add(new Item("this is my first Item",R.drawable.download, true,50));
-        list.add(new Item("this is my first Item",R.drawable.download, true,50));
-        list.add(new Item("this is my first Item",R.drawable.download, true,50));
-
 
         myListView= findViewById(R.id.myListViewArray);
         myAdapter= new CustomAdapter(this,R.layout.itemrole,list);
@@ -74,7 +68,6 @@ public class ArrayListActivity1 extends AppCompatActivity  {
                     myAdapter.notifyDataSetChanged();
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

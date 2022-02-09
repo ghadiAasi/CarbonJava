@@ -10,12 +10,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.FileNotFoundException;
 
-public class ProfileCamera extends AppCompatActivity implements View.OnClickListener{
+public class ProfileCamera extends AppCompatActivity implements OnClickListener{
 
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;

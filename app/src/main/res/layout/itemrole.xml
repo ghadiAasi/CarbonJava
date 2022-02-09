@@ -5,22 +5,22 @@
     android:descendantFocusability="blocksDescendants"
     android:layout_height="match_parent">
 <LinearLayout
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     >
+
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
         android:id="@+id/imageItem"
-        android:src="@drawable/coding"
-        />
+        android:layout_width="242dp"
+        android:layout_height="152dp"
+        android:src="@drawable/coding" />
 
     <TextView
         android:id="@+id/textViewDes"
-        android:layout_width="137dp"
-        android:layout_height="93dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="description"
         android:textSize="24dp" />
 
@@ -28,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
+        android:onClick="cameraArray"
         android:id="@+id/itemButton"
         />
 </LinearLayout>
