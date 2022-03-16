@@ -2,18 +2,32 @@ package com.example.carbonjava;
 
 public class Item {
     private String description;
-    private int resid; //image id to be loaded
-    private boolean isHappy;
-    private int amount;
+    private String key; //image id to be loaded
+    private int level;
+    private String pic;
 
-    public Item(String description, int resid, boolean isHappy, int amount) {
-        this.description = description;
-        this.resid = resid;
-        this.isHappy = isHappy;
-        this.amount = amount;
+    public Item(String pic,String gameName,String key,int level){
+        this.pic =pic;
+        this.description = gameName;
+        this.key = key;
+        this.level = level;
     }
-    public Item(){
 
+    public Item(){}
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
     public String getDescription() {
@@ -24,37 +38,20 @@ public class Item {
         this.description = description;
     }
 
-    public int getResid() {
-        return resid;
+
+    public int getLevel() {
+        return level;
     }
 
-    public void setResid(int resid) {
-        this.resid = resid;
-    }
-
-    public boolean isHappy() {
-        return isHappy;
-    }
-
-    public void setHappy(boolean happy) {
-        isHappy = happy;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     @Override
     public String toString() {
         return "Item{" +
                 "description='" + description + '\'' +
-                ", resid=" + resid +
-                ", isHappy=" + isHappy +
-                ", amount=" + amount +
+                ", amount=" + level +
                 '}';
     }
 }

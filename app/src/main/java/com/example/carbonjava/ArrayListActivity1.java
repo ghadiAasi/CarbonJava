@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +27,8 @@ public class ArrayListActivity1 extends AppCompatActivity  {
     private ListView myListView;
     private CustomAdapter myAdapter;
     private ArrayList<Item> list;
+    private Button deleteButton;
+    private TextView gameName;
     private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://carbonjava-4211d-default-rtdb.europe-west1.firebasedatabase.app/");
 
@@ -33,8 +37,12 @@ public class ArrayListActivity1 extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list1);
 
+        gameName = findViewById(R.id.gameName);
+        deleteButton = findViewById(R.id.itemButtonDelete);
+
         list = new ArrayList<>();
-        list.add(new Item("this is my first Item",R.drawable.download, true,50));
+        //list.add(new Item());
+        //Item item = new Item("7777","tic tac toe",database.getReference().getKey(),6);
 
         myListView= findViewById(R.id.myListViewArray);
         myAdapter= new CustomAdapter(this,R.layout.itemrole,list);
@@ -42,7 +50,7 @@ public class ArrayListActivity1 extends AppCompatActivity  {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "Item: " + list.get(i), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Item: added", Toast.LENGTH_LONG).show();
             }
     });
         myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -56,14 +64,13 @@ public class ArrayListActivity1 extends AppCompatActivity  {
         String UID = maFirebaseAuth.getUid();
         Toast.makeText(this,"UID"+UID,Toast.LENGTH_LONG).show();
         DatabaseReference myRef = database.getReference("users/"+UID);
-        Item item = new Item("this is my first Item",R.drawable.download,true,50);
-        myRef.push().setValue(item);
 
+       // myRef.push().setValue(item);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Item Item =dataSnapshot.getValue(Item.class);
+                    Item item =dataSnapshot.getValue(Item.class);
                     list.add(item);
                     myAdapter.notifyDataSetChanged();
                 }

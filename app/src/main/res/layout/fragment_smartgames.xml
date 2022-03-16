@@ -3,13 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain"
+    android:background="#b6daa7"
     tools:context=".SmartGamesFragment">
-    <TextView
-        android:id="@+id/title_view"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        />
+
 
     <GridLayout
         android:layout_width="match_parent"
@@ -17,40 +13,18 @@
         android:columnCount="1"
         android:rowCount="4">
 
+
+
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="25sp"
-            android:id="@+id/sudoku"
-            app:cardCornerRadius="8sp"
-            app:cardElevation="8sp">
-
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/sudoku2"
-                    android:layout_margin="15dp"
-                    />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="324dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
+            android:id="@+id/sudokuEasy"
             android:layout_margin="25sp"
-            android:id="@+id/tickTack"
-            android:layout_marginBottom="150dp"
             app:cardCornerRadius="8sp"
             app:cardElevation="8sp">
 
@@ -76,6 +50,75 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:id="@+id/sudokuHard"
+            android:layout_margin="25sp"
+            app:cardCornerRadius="8sp"
+            app:cardElevation="8sp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_baseline_dashboard_customize_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudoku"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="25sp"
+            android:id="@+id/tickTack"
+            app:cardCornerRadius="8sp"
+            app:cardElevation="8sp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_baseline_dashboard_customize_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudoku"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
     </GridLayout>
 
 

@@ -3,6 +3,8 @@
     package="com.example.carbonjava">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,21 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbonJava">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_settings" />
+        <activity
             android:name=".SudokuActivity"
             android:exported="true" />
         <activity
             android:name=".SmartGames"
             android:exported="true" />
-        <activity
-            android:name=".ShotsGame"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".GameOver"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".ShotsGameMain"
-            android:exported="true"
-            android:screenOrientation="landscape" />
         <activity
             android:name=".TickTack"
             android:exported="true" />

@@ -17,7 +17,7 @@
         android:src="@drawable/background" />
 
     <TextView
-        android:id="@+id/FirstText"
+        android:id="@+id/usersName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageViewProfile"
@@ -26,10 +26,10 @@
         android:textSize="20dp"
         />
     <TextView
-        android:id="@+id/SecondText"
+        android:id="@+id/usersText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/FirstText"
+        android:layout_below="@+id/usersName"
         android:layout_centerHorizontal="true"
         android:text="the users email"
         android:textSize="20dp"
@@ -38,7 +38,7 @@
         android:id="@+id/buttonCamera"
         android:layout_width="45dp"
         android:layout_height="35dp"
-        android:layout_below="@+id/SecondText"
+        android:layout_below="@+id/usersText"
         android:layout_centerHorizontal="true"
         android:background="@drawable/ic_baseline_camera_alt_24"
         />
@@ -72,13 +72,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:text="level of spaceshooter"
-            android:textSize="30dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="100dp"
             android:text="level of spaceshooter"
             android:textSize="30dp" />
         <Button

@@ -9,22 +9,12 @@
     android:background="@drawable/backgroundinter"
     tools:context=".InterActivity">
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="174dp"
-        android:layout_height="58dp"
-        android:textColor="@color/black"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="guest"
-        android:background="@drawable/button"
-        android:text="inter as a guest" />
+
 
     <Button
         android:id="@+id/button7"
         android:layout_width="142dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/button"
         android:onClick="interacccount"
         android:text="login"
@@ -34,7 +24,8 @@
         android:id="@+id/button8"
         android:layout_width="179dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:onClick="signup"
         android:text="Create an account"

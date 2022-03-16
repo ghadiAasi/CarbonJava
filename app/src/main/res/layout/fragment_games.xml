@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain"
+    android:background="#b6daa7"
     tools:context=".WelcomePG">
 
     <GridLayout
@@ -13,40 +13,7 @@
         android:columnCount="1"
         android:rowCount="4">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:id="@+id/spaceShooter"
-            android:layout_margin="25sp"
-            app:cardCornerRadius="8sp"
-            app:cardElevation="8sp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/ic_baseline_dashboard_customize_24" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sudoku"
-                    android:textAlignment="center"
-                    android:textSize="20dp" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -56,7 +23,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:onClick="tickTack"
+            android:id="@+id/tickTack"
             android:layout_margin="25sp"
             app:cardCornerRadius="8sp"
             app:cardElevation="8sp">

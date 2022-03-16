@@ -16,20 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class WelcomePG extends AppCompatActivity implements DialogInterface.OnClickListener {
-    private TextView textViewWelcome;
-    public Button buttonPlay;
-    public Button buttonExam;
     private Intent musicIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_pg);
-     //   textViewWelcome= findViewById(R.id.textViewWelcome);
-        buttonPlay = findViewById(R.id.buttonPlay);
-        buttonExam= findViewById(R.id.buttonTicktack);
 
         String email =getIntent().getStringExtra("email");
         String password= getIntent().getStringExtra("password");
@@ -61,7 +56,41 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
             return true;
         }
     };
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_activity_one,menu);
+        //bring xml and put it on the activity
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                intent=new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                break;
 
+            case R.id.action_mybests:
+                intent=new Intent(this, ArrayListActivity1.class);
+                startActivity(intent);
+                break;
+
+            case R.id.action_logout:
+                AlertDialog.Builder builder=new AlertDialog.Builder(this);
+                builder.setMessage("are you sure?");
+                builder.setCancelable(false);
+                builder.setPositiveButton("yes",this);
+                builder.setNegativeButton("No", this);
+                AlertDialog dialog=builder.create();
+                dialog.show();
+                intent=new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+
+        }//switch
+        return super.onOptionsItemSelected(item);
+    }//onOptionItemSelected
     public void onClick(DialogInterface dialogInterface, int i){
         if(i==dialogInterface.BUTTON_POSITIVE){
             super.onBackPressed();
@@ -80,32 +109,6 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         AlertDialog dialog= builder.create();
         dialog.show();
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_one,menu);
-        //bring xml and put it on the activity
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.settingsMenu:
-                Toast.makeText(WelcomePG.this, "Settings", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.exitMenu:
-                // closeApplication();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
-    public void game(View view) {
-        Intent intent = new Intent(this,ShotsGame.class);
-        startActivity(intent);
-    }
-    public void tickTack(View view) {
-        Intent intent = new Intent(this,TickTack.class);
-        startActivity(intent);
-    }
 }

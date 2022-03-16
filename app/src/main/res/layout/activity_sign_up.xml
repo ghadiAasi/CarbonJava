@@ -18,6 +18,10 @@
                 android:text="Sing Up"
             android:textColor="@color/black"
                 />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+                ></androidx.cardview.widget.CardView>
         <EditText
             android:id="@+id/editTextNameSignin"
             android:layout_width="285dp"
@@ -100,7 +104,7 @@
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="22dp"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="10dp"
             android:textColor="#ffbf"
             android:onClick="loginFsign"
             android:text="you already have an account"

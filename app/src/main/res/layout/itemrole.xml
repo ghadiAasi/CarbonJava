@@ -2,34 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:gravity="center"
     android:descendantFocusability="blocksDescendants"
     android:layout_height="match_parent">
-<LinearLayout
-    android:orientation="vertical"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    >
 
     <ImageView
         android:id="@+id/imageItem"
-        android:layout_width="242dp"
-        android:layout_height="152dp"
-        android:src="@drawable/coding" />
+        android:layout_width="322dp"
+        android:layout_height="447dp"
+        android:src="@drawable/download" />
 
     <TextView
-        android:id="@+id/textViewDes"
+        android:id="@+id/gameName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="description"
         android:textSize="24dp" />
 
-    <Button
+
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text="delete"
         android:onClick="cameraArray"
-        android:id="@+id/itemButton"
-        />
-</LinearLayout>
+        android:id="@+id/itemButtonDelete" />
+
 </LinearLayout>

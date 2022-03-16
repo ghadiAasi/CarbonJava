@@ -5,169 +5,123 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:clickable="false"
-    android:descendantFocusability="blocksDescendants"
-    android:focusable="false"
-    android:focusableInTouchMode="false"
-    android:background="@drawable/backgroundmain"
+    android:background="#bdc8da"
     tools:context=".TickTack">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="30dp"
-        app:cardCornerRadius="20dp"
-        android:orientation="vertical">
-        <com.example.carbonjava.TickTackToeBoard
-            android:id="@+id/tickTackToeBoard2"
-            android:layout_width="match_parent"
-            android:layout_height="398dp"
-            android:layout_marginTop="50dp"
-            custom:boardColor="@color/black"
-            custom:xColor="@color/black"
-            custom:oColor="@color/black"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-
-            <Button
-                android:id="@+id/firstbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="60dp"
-                android:onClick="home"
-                android:textSize="20dp"
-                android:visibility="invisible" />
-            <Button
-                android:id="@+id/secondbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="60dp"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-            <Button
-                android:id="@+id/thirdbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
-                android:layout_marginTop="60dp"
-                android:onClick="addPlayerO"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <Button
-                android:id="@+id/forthbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="180dp"
-                android:onClick="addPlayerO"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-            <Button
-                android:id="@+id/fithbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="180dp"
-                android:onClick="addPlayerO"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-            <Button
-                android:id="@+id/sixbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="180dp"
-                android:onClick="addPlayerO"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <Button
-                android:id="@+id/tenbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="300dp"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-            <Button
-                android:id="@+id/elevenbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="300dp"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-            <Button
-                android:id="@+id/tewelvebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="300dp"
-                android:onClick="addPlayerO"
-                android:visibility="invisible"
-                android:textSize="20dp" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/Liner"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="80dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginBottom="5dp"
-                android:onClick="home"
-                android:text="home"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="98dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:text="00:00"
-                android:textSize="25dp" />
-        </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="387dp"
+        android:layout_height="49dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTicTac"
+        app:layout_constraintVertical_bias="0.861">
 
         <Button
-        android:id="@+id/PLayerO"
-        android:layout_width="200dp"
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:background="@drawable/button"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/playAgainButton"
+            app:layout_constraintHorizontal_bias="0.592"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Again"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:background="@drawable/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.752"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textTicTac"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="75dp"
-        android:layout_gravity="bottom" android:layout_marginBottom="10dp"
-        android:onClick="addPlayerO"
-        android:text="Play as O"
-        android:textSize="20dp" />
+        android:layout_marginTop="20dp"
+        android:text="TicTacToe game"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.cardview.widget.CardView>
+    <com.example.carbonjava.TickTackToeBoard
+        android:id="@+id/ticTacToeBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325"
+        custom:boardColor="#112233"
+        custom:winningLineColor="@color/black"
+        custom:oColor="#ebc2cb"
+        custom:xColor="#4c395b" />
 
+    <TextView
+        android:id="@+id/WinningX"
+        android:layout_width="123dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:text="x winning: 0"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTicTac"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/WinningY"
+        android:layout_width="123dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="280dp"
+        android:text="y winning: 0"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTicTac"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/screenshot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:text="screen shot"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTicTac"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

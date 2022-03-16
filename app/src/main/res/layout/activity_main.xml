@@ -6,65 +6,78 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="bottom"
-    android:background="@drawable/backgroundlogin"
+    android:background="@drawable/backgroundforgot"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="110dp"
-        android:text="login"
-        android:textColor="#9ccaf3"
-        android:textColorHighlight="@color/black"
+        android:layout_marginBottom="70dp"
+        android:text="Login"
+        android:textColor="#8383A4"
         android:textSize="70dp" />
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="#e1dcf0"
+        app:cardCornerRadius="40dp"
+        >
     <EditText
         android:id="@+id/editTextEmailLogin"
         android:layout_width="285dp"
         android:layout_height="50dp"
-        android:layout_margin="5dp"
         android:hint="Email"
-
+        android:layout_margin="20dp"
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
         android:paddingLeft="10dp"
-        android:textColorHint="#143C3C"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:textSize="23dp" />
 
         <EditText
             android:id="@+id/editTextPasswordLogin"
             android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:hint="password"
+            android:hint="Password"
             android:paddingStart="15dp"
             android:paddingLeft="10dp"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_vertical"
             android:inputType="textPassword"
-            android:textColorHint="#143C3C"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="23dp"
              />
         <EditText
             android:id="@+id/editTextPasswordLoginConfirm"
             android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_margin="5dp"
+            android:layout_margin="20dp"
             android:hint="Confirm password"
             android:inputType="textPassword"
             android:paddingStart="15dp"
             android:paddingLeft="10dp"
-            android:textColorHint="#143C3C"
+            android:layout_gravity="bottom"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="23dp" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/buttonlogin"
         android:layout_width="170dp"
         android:layout_height="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/button"
         android:onClick="login"
+        android:gravity="center"
         android:layout_gravity="center"
-        android:textColor="#C1E0E6"
+        android:textColor="@color/white"
         android:textSize="18dp"
         android:text="Login" />
 
@@ -74,10 +87,10 @@
         android:layout_marginTop="5dp"
         android:minHeight="40dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="30dp"
         android:onClick="ForgotPass"
         android:text="Forgot Password"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18dp" />
 
 </LinearLayout>
