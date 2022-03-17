@@ -2,6 +2,9 @@ package com.example.carbonjava;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +21,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 public class CustomAdapter extends ArrayAdapter<Item> {
 
     private Context context;
     private List<Item> objects;
+    private Bitmap pic;
+    private String image;
     private int resource;
     private FirebaseDatabase database =FirebaseDatabase.getInstance("https://carbonjava-4211d-default-rtdb.europe-west1.firebasedatabase.app/");
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -53,9 +60,8 @@ public class CustomAdapter extends ArrayAdapter<Item> {
              TextView textView = view.findViewById(R.id.gameName);
              Button itemButton = view.findViewById(R.id.itemButtonDelete);
 
-             //todo call the method which converts from string to bitmap
-             // unit.getPic()
-         //    imageView.setImageDrawable(unit.);
+             //pic =StringToBitMap(image);
+
 
              itemButton.setOnClickListener(new View.OnClickListener() {
                  @Override
@@ -68,6 +74,19 @@ public class CustomAdapter extends ArrayAdapter<Item> {
              });
 
          }
+
          return view;
+    }
+    public Bitmap StringToBitMap(String image){
+        try{
+            byte [] encodeByte= Base64.decode(image,Base64.DEFAULT);
+
+            InputStream inputStream  = new ByteArrayInputStream(encodeByte);
+            Bitmap bitmap  = BitmapFactory.decodeStream(inputStream);
+            return bitmap;
+        }catch(Exception e){
+            e.getMessage();
+            return null;
+        }
     }
 }
