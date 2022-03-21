@@ -41,37 +41,21 @@ public class ArrayListActivity1 extends AppCompatActivity  {
         deleteButton = findViewById(R.id.itemButtonDelete);
 
         list = new ArrayList<>();
-        //list.add(new Item());
-        //Item item = new Item("7777","tic tac toe",database.getReference().getKey(),6);
-
         myListView= findViewById(R.id.myListViewArray);
-        myAdapter= new CustomAdapter(this,R.layout.itemrole,list);
-        myListView.setAdapter(myAdapter);
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "Item: added", Toast.LENGTH_LONG).show();
-            }
-    });
-        myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                list.remove(i);
-                myAdapter.notifyDataSetChanged();
-                return false;
-            }
-        });
+
         String UID = maFirebaseAuth.getUid();
         Toast.makeText(this,"UID"+UID,Toast.LENGTH_LONG).show();
-        DatabaseReference myRef = database.getReference("users/"+UID);
+        DatabaseReference myRef = database.getReference("Users/"+UID);
 
-       // myRef.push().setValue(item);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     Item item =dataSnapshot.getValue(Item.class);
                     list.add(item);
+
+                    myAdapter= new CustomAdapter(getApplicationContext(),R.layout.itemrole,list);
+                    myListView.setAdapter(myAdapter);
                     myAdapter.notifyDataSetChanged();
                 }
             }

@@ -77,7 +77,15 @@ public class SudokuBoard extends View {
         for(int r =0;r<9;r++){
             for(int c =0;c<9;c++){
                 if(sudocku.getSudoku()[r][c]!=0){
-                update(canvas,r,c);
+                    String text =Integer.toString(sudocku.getSudoku()[r][c]);
+                    float width, height;
+
+                    letterColorPaint.getTextBounds(text,0,text.length(),letterPaintBounds);
+                    width = letterColorPaint.measureText(text);
+                    height = letterColorPaint.measureText(text);
+
+                    canvas.drawText(text,(c*cellSize)+((cellSize-width)/2),(r*cellSize+cellSize)-((cellSize-height)/2),letterColorPaint);
+
                 }
             }
         }
@@ -86,10 +94,6 @@ public class SudokuBoard extends View {
         for(ArrayList<Object> letter : sudocku.getEmptyBoxIndex()){
             int r = (int)letter.get(0);
             int c = (int)letter.get(1);
-            update(canvas,r,c);
-        }
-    }
-    private void update(Canvas canvas,int r,int c){
             String text =Integer.toString(sudocku.getSudoku()[r][c]);
             float width, height;
 
@@ -98,7 +102,19 @@ public class SudokuBoard extends View {
             height = letterColorPaint.measureText(text);
 
             canvas.drawText(text,(c*cellSize)+((cellSize-width)/2),(r*cellSize+cellSize)-((cellSize-height)/2),letterColorPaint);
+
+        }
     }
+    //private void update(Canvas canvas,int r,int c){
+      //      String text =Integer.toString(sudocku.getSudoku()[r][c]);
+        //    float width, height;
+
+          //  letterColorPaint.getTextBounds(text,0,text.length(),letterPaintBounds);
+            //width = letterColorPaint.measureText(text);
+            ///height = letterColorPaint.measureText(text);
+
+            //canvas.drawText(text,(c*cellSize)+((cellSize-width)/2),(r*cellSize+cellSize)-((cellSize-height)/2),letterColorPaint);
+    //}
     @Override
     protected void onMeasure(int width,int height){
         super.onMeasure(width,height);

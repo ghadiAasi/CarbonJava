@@ -8,6 +8,7 @@ public class Sudocku {
     public int selected_row;
     public int selected_column;
     private int[][] sudoku;
+    private int[][] solver;
     ArrayList<ArrayList<Object>> emptyBoxIndex;
     public final int LINE = 9; // LINE have to be a number that result in int after square
 
@@ -20,6 +21,7 @@ public class Sudocku {
         for (int i = 0; i < LINE; i++) {
             for (int j = 0; j < LINE; j++) {
                 sudoku[i][j] = 0;
+            //    solver[i][j] =(int)(Math.random()*9)+1;
             }
         }
         emptyBoxIndex = new ArrayList<>();
@@ -36,6 +38,7 @@ public class Sudocku {
             }
         }
     }
+
     protected void setNumberPos(int num){
         if(this.selected_row != -1 && this.selected_column != -1){
             if(this.sudoku[this.selected_row-1][this.selected_column-1] == num){
@@ -45,6 +48,9 @@ public class Sudocku {
                 this.sudoku[this.selected_row-1][this.selected_column-1] = num;
             }
         }
+    }
+    public int[][] getSudoku() {
+        return sudoku;
     }
     public void setEmptyBoxIndex(ArrayList<ArrayList<Object>> emptyBoxIndex) {
         this.emptyBoxIndex = emptyBoxIndex;
@@ -66,7 +72,5 @@ public class Sudocku {
     public void setSelectedColumn(int selected_colum) {
         this.selected_column = selected_colum;
     }
-    public int[][] getSudoku() {
-        return sudoku;
-    }
+
 }

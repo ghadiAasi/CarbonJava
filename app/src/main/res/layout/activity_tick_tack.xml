@@ -8,6 +8,12 @@
     android:background="#bdc8da"
     tools:context=".TickTack">
 
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:background="@drawable/exit"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="387dp"

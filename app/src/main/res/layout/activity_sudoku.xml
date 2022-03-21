@@ -11,11 +11,9 @@
     tools:context=".SudokuActivity">
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="@string/easy"
-        android:textSize="20dp"
+        android:layout_width="48dp"
+        android:layout_height="45dp"
+        android:background="@drawable/exit"
         tools:ignore="ContentDescription" />
 
     <LinearLayout
@@ -30,7 +28,7 @@
             android:id="@+id/level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="easy"
+            android:text="@string/easy"
             android:textColor="@color/black"
             android:textSize="25dp" />
 
@@ -59,39 +57,7 @@
         android:layout_marginTop="47dp"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/linear1upper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginStart="10dp"
-                android:text="Undo"
-                android:textColor="@color/black"
-                android:textSize="25dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
-                android:text="Erase"
-                android:textColor="@color/black"
-                android:textSize="25dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:orientation="horizontal">
 
             <Button
                 android:layout_width="35dp"
@@ -174,8 +140,6 @@
                 android:textSize="25dp" />
         </LinearLayout>
 
-    </LinearLayout>
-
     <com.example.carbonjava.SudokuBoard
         android:id="@+id/sudokuBoard"
         android:layout_width="wrap_content"
@@ -184,6 +148,8 @@
         custom:boardSColor="#000000"
         custom:cellFillColor="#e8cdcd"
         custom:cellsHighlightColor="#ead5de"
+        custom:letterColor="@color/black"
+        custom:letterColorPlaced="@color/black"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 

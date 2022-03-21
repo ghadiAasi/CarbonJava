@@ -110,5 +110,4 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         dialog.show();
     }
 
-
 }

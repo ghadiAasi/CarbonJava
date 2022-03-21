@@ -51,7 +51,9 @@ public class Item {
     public String toString() {
         return "Item{" +
                 "description='" + description + '\'' +
-                ", amount=" + level +
+                ", key='" + key + '\'' +
+                ", level=" + level +
+                ", pic='" + pic + '\'' +
                 '}';
     }
 }

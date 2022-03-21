@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -29,9 +35,8 @@ public class CustomAdapter extends ArrayAdapter<Item> {
 
     private Context context;
     private List<Item> objects;
-    private Bitmap pic;
-    private String image;
     private int resource;
+    private String pic;
     private FirebaseDatabase database =FirebaseDatabase.getInstance("https://carbonjava-4211d-default-rtdb.europe-west1.firebasedatabase.app/");
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private String UID = mAuth.getUid();
@@ -57,19 +62,22 @@ public class CustomAdapter extends ArrayAdapter<Item> {
              DatabaseReference myRef = firebaseDatabase.getReference("Users/"+user+"/"+screenShot.getKey());
 
              ImageView imageView = view.findViewById(R.id.imageItem);
+
              TextView textView = view.findViewById(R.id.gameName);
+             textView.setText(screenShot.getDescription());
+
              Button itemButton = view.findViewById(R.id.itemButtonDelete);
 
-             //pic =StringToBitMap(image);
-
-
+             imageView.setImageBitmap(StringToBitMap(screenShot.getPic()));
              itemButton.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View view){
-                     myRef.removeValue();
-                     Toast.makeText(context, "this item was deleted", Toast.LENGTH_SHORT).show();
-                     objects.remove(position);
-                     notifyDataSetChanged();
+                     if(objects!=null) {
+                         myRef.removeValue();
+                         Toast.makeText(context, "this item was deleted", Toast.LENGTH_SHORT).show();
+                         objects.remove(position);
+                         notifyDataSetChanged();
+                     }
                  }
              });
 

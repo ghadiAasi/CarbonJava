@@ -25,6 +25,11 @@ public class ProfileFragment extends Fragment {
     private Button screenshot;
     private TextView userText;
     private TextView userEmail;
+    private TextView levelSudokuE;
+    private TextView levelSudokuH;
+    private TextView levelMathE;
+    private TextView levelMathH;
+    private TextView bestTicTaToe;
      FirebaseDatabase database;
      DatabaseReference databaseReference;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -38,7 +43,7 @@ public class ProfileFragment extends Fragment {
         userText = rootView.findViewById(R.id.usersName);
         userEmail = rootView.findViewById(R.id.usersText);
 
-        userText.setText(mAuth.getCurrentUser().getDisplayName());
+        userText.setText(mAuth.getCurrentUser().getProviderId());
         userEmail.setText(mAuth.getCurrentUser().getEmail());
 
         camera=rootView.findViewById(R.id.buttonCamera);

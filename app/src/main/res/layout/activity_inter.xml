@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/backgroundinter"
+    android:background="@drawable/interbackground"
     tools:context=".InterActivity">
-
 
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="142dp"
-        android:layout_height="46dp"
-        android:background="@drawable/button"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="#6653a9"
         android:onClick="interacccount"
-        android:text="login"
-        android:textColor="@color/black" />
+        android:text="@string/login"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="179dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="#6653a9"
         android:onClick="signup"
-        android:text="Create an account"
-        android:textColor="@color/black" />
+        android:text="@string/create_an_account"
+        android:textColor="@color/white" />
 </LinearLayout>

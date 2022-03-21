@@ -77,7 +77,7 @@ public class TickTack extends AppCompatActivity implements View.OnClickListener 
             ticTacToeBoard.invalidate();
         }
         if(view == homeButton){
-            Intent intent = new Intent(this,SmartGamesFragment.class);
+            Intent intent = new Intent(this,WelcomePG.class);
             startActivity(intent);
         }
     }
