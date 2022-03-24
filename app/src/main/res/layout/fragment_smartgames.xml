@@ -30,7 +30,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/mathgame" />
+                    android:src="@drawable/mathgameeasy" />
 
         </androidx.cardview.widget.CardView>
 
@@ -51,7 +51,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/mathgame" />
+                    android:src="@drawable/mathgamehard" />
 
         </androidx.cardview.widget.CardView>
     </GridLayout>

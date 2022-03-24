@@ -34,7 +34,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/buttonsudoku2" />
+                android:src="@drawable/sudokugameeasybutton" />
 
         </androidx.cardview.widget.CardView>
 
@@ -55,7 +55,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/buttonsudoku3" />
+                    android:src="@drawable/sudokugamehardbutton" />
 
         </androidx.cardview.widget.CardView>
 
@@ -76,7 +76,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/tictactoe" />
+                    android:src="@drawable/tictactoebutton" />
 
         </androidx.cardview.widget.CardView>
     </GridLayout>
