@@ -26,6 +26,6 @@
         android:layout_marginBottom="40dp"
         android:background="#6653a9"
         android:onClick="signup"
-        android:text="@string/create_an_account"
+        android:text="@string/create_an_account_inter"
         android:textColor="@color/white" />
 </LinearLayout>

@@ -30,8 +30,8 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         String password= getIntent().getStringExtra("password");
         String name= getIntent().getStringExtra("name");
 
-        musicIntent = new Intent(this,MusicService.class);
-        startService(musicIntent);
+        //musicIntent = new Intent(this,MusicService.class);
+        //startService(musicIntent);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);

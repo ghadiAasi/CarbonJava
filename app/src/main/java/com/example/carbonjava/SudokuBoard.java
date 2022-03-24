@@ -23,6 +23,7 @@ public class SudokuBoard extends View {
 
     private final int letter;
     private final int letterPlaced;
+    private final int letterPlacedMistake;
 
     private final Paint letterColorPaint = new Paint();
     private final Paint letterColorPlacedPaint = new Paint();
@@ -43,6 +44,7 @@ public class SudokuBoard extends View {
         this.cellsHightlightColor = a.getInteger(R.styleable.SudokuBoard_cellsHighlightColor,0);
         this.letter = a.getInteger(R.styleable.SudokuBoard_letterColor,0);
         this.letterPlaced = a.getInteger(R.styleable.SudokuBoard_letterColorPlaced,0);
+        this.letterPlacedMistake = a.getInteger(R.styleable.SudokuBoard_letterColorPlacedMistakes,0);
 
     }finally {
         a.recycle();
@@ -104,17 +106,22 @@ public class SudokuBoard extends View {
             canvas.drawText(text,(c*cellSize)+((cellSize-width)/2),(r*cellSize+cellSize)-((cellSize-height)/2),letterColorPaint);
 
         }
+        letterColorPaint.setColor(letterPlacedMistake);
+
+        for(ArrayList<Object> letter : sudocku.getEmptyBoxIndexMistakes()){
+            int r = (int)letter.get(0);
+            int c = (int)letter.get(1);
+            String text =Integer.toString(sudocku.getSudoku()[r][c]);
+            float width, height;
+
+            letterColorPaint.getTextBounds(text,0,text.length(),letterPaintBounds);
+            width = letterColorPaint.measureText(text);
+            height = letterColorPaint.measureText(text);
+
+            canvas.drawText(text,(c*cellSize)+((cellSize-width)/2),(r*cellSize+cellSize)-((cellSize-height)/2),letterColorPaint);
+        }
     }
-    //private void update(Canvas canvas,int r,int c){
-      //      String text =Integer.toString(sudocku.getSudoku()[r][c]);
-        //    float width, height;
 
-          //  letterColorPaint.getTextBounds(text,0,text.length(),letterPaintBounds);
-            //width = letterColorPaint.measureText(text);
-            ///height = letterColorPaint.measureText(text);
-
-            //canvas.drawText(text,(c*cellSize)+((cellSize-width)/2),(r*cellSize+cellSize)-((cellSize-height)/2),letterColorPaint);
-    //}
     @Override
     protected void onMeasure(int width,int height){
         super.onMeasure(width,height);

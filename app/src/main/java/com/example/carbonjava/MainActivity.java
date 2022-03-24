@@ -88,7 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             AlertDialog dialog = builder.create();
             dialog.show();
         } else {
-            login(email,password);
+            if(email != null && password != null) {
+                login(email, password);
+            }
         }
     }
         public void login(String email,String password){

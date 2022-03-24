@@ -6,5 +6,6 @@
         <attr name="cellsHighlightColor" format="color"/>
         <attr name="letterColor" format="color"/>
         <attr name="letterColorPlaced" format="color"/>
+        <attr name="letterColorPlacedMistakes" format="color"/>
     </declare-styleable>
 </resources>

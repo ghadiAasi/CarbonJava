@@ -41,12 +41,22 @@
             android:textSize="20dp" />
 
         <TextView
+            android:id="@+id/clockSudoku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00:00"
             android:textColor="@color/black"
             android:textSize="20dp" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:onClick="restart"
+        android:background="@drawable/button"
+        android:text="new game"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -149,7 +159,8 @@
         custom:cellFillColor="#e8cdcd"
         custom:cellsHighlightColor="#ead5de"
         custom:letterColor="@color/black"
-        custom:letterColorPlaced="@color/black"
+        custom:letterColorPlaced="#00ff00"
+        custom:letterColorPlacedMistakes="@color/white"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 

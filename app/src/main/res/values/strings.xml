@@ -113,8 +113,8 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="easy">easy</string>
-    <string name="_3">3</string>
     <string name="login">login</string>
+    <string name="_3">3</string>
     <string name="create_an_account_inter">Create an account</string>
     <string name="email_log_in">Email</string>
     <string name="forgot_password">Forgot Password</string>
@@ -128,4 +128,16 @@
     <string name="phone_number">phone number</string>
     <string name="create_an_account_sing_up">Create an account</string>
     <string name="you_already_have_an_account">you already have an account</string>
+
+    <string name="One">1</string>
+    <string name="Two">2</string>
+    <string name="Three">3</string>
+    <string name="Four">4</string>
+    <string name="Five">5</string>
+    <string name="Six">6</string>
+    <string name="Seven">7</string>
+    <string name="Eight">8</string>
+    <string name="Nine">9</string>
+
+    <string name="delete">delete</string>
 </resources>

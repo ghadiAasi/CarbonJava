@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain"
+    android:background="@drawable/backgroundwelcome"
     android:orientation="vertical"
     tools:context=".ProfileActivity">
 
@@ -14,7 +14,7 @@
         android:layout_height="94dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:src="@drawable/backgroundforgot" />
+        android:src="@drawable/profileimage" />
 
     <TextView
         android:id="@+id/usersName"
@@ -42,16 +42,15 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/ic_baseline_camera_alt_24"
         />
+
     <androidx.cardview.widget.CardView
         android:layout_width="385dp"
-        android:layout_height="400dp"
+        android:layout_height="380dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        app:cardCornerRadius="20dp"
-        >
+        app:cardCornerRadius="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,6 +67,7 @@
             android:layout_marginTop="70dp"
             android:text="level sudokuE"
             android:textSize="30dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,6 +83,7 @@
             android:layout_marginTop="140dp"
             android:text="level mathE"
             android:textSize="30dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,12 +91,13 @@
             android:layout_marginTop="175dp"
             android:text="level mathH"
             android:textSize="30dp" />
+
         <Button
+            android:id="@+id/Array"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="85dp"
             android:layout_marginTop="320dp"
-            android:id="@+id/Array"
             android:text="ScreenShots"
             android:textSize="20dp" />
 
