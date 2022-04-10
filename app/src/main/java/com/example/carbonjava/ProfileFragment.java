@@ -24,8 +24,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -33,22 +31,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileFragment extends Fragment {
-    private Button camera;
-    private Button screenshot;
-    private TextView userText;
-    private TextView userEmail;
     private ImageView profilePic;
+    private ListView listView;
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private static final String TAG = "ProfileFragment";
-    private ListView listView;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView =inflater.inflate(R.layout.fragment_profile, container, false);
 
-        userText = rootView.findViewById(R.id.usersName);
-        userEmail = rootView.findViewById(R.id.usersText);
+        TextView userText = rootView.findViewById(R.id.usersName);
+        TextView userEmail = rootView.findViewById(R.id.usersText);
         listView = (ListView) rootView.findViewById(R.id.listView);
 
         userText.setText(mAuth.getCurrentUser().getDisplayName());
@@ -62,7 +57,7 @@ public class ProfileFragment extends Fragment {
         String key = myRef.getKey();
 
 
-        camera=rootView.findViewById(R.id.buttonCamera);
+        Button camera = rootView.findViewById(R.id.buttonCamera);
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +65,7 @@ public class ProfileFragment extends Fragment {
                 startActivityForResult(intent, 101);
             }
         });
-        screenshot=rootView.findViewById(R.id.Array);
+        Button screenshot = rootView.findViewById(R.id.Array);
         screenshot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +87,6 @@ public class ProfileFragment extends Fragment {
                 }
                 refreshList(items);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e(TAG, "ERRRRRRRRROR");
