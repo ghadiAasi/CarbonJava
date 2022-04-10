@@ -13,7 +13,6 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class SudokuBoard extends View {
     private final int boardColor;
@@ -32,7 +31,7 @@ public class SudokuBoard extends View {
     private final Paint cellFillColorPaint = new Paint();
     private final Paint cellsHightlightColorPaint = new Paint();
 
-    private Sudocku sudocku = new Sudocku();
+    private SudokuLogic sudocku = new SudokuLogic();
 
     public SudokuBoard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -82,7 +81,7 @@ public class SudokuBoard extends View {
                     String text =Integer.toString(sudocku.getSudoku()[r][c]);
                     float width, height;
 
-                    letterColorPaint.getTextBounds(text,0,text.length(),letterPaintBounds);
+                    letterColorPaint.getTextBounds(text,0,text.length(),letterPaintBounds);//to get width of text
                     width = letterColorPaint.measureText(text);
                     height = letterColorPaint.measureText(text);
 
@@ -190,7 +189,7 @@ public class SudokuBoard extends View {
         paint.setStrokeWidth(10);
         paint.setColor(boardColor);
     }
-    public Sudocku getSudocku(){
+    public SudokuLogic getSudocku(){
         return this.sudocku;
     }
 }

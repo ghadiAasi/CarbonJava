@@ -16,7 +16,7 @@ import androidx.core.app.NotificationManagerCompat;
  * a service on a separate handler thread.
  * <p>
  * <p>
- * TODO: Customize class - update intent actions, extra parameters and static
+ * TODO: Change class to work for more than one to deal with
  * helper methods.
  */
 public class NotificationService extends IntentService {
@@ -30,12 +30,16 @@ public class NotificationService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         Notification.Builder noBuilder = new Notification.Builder(this);
-        //Todo need to change title
-        noBuilder.setContentTitle("CarbonJava ");
-        noBuilder.setContentTitle("this is the notify");
+        noBuilder.setContentTitle("Common Games ");
+        //if() {
+            noBuilder.setContentTitle("Welcome back to Common games!");
+        //}
+        //else{
+
+        //}
         noBuilder.setSmallIcon(R.drawable.ic_baseline_chat_24);
         //this intent will be pending until the user clicks on the notification and will activate the activity specified in the intent
-        Intent noIntent = new Intent(this, MainActivity.class);
+        Intent noIntent = new Intent(this, LogInActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 2, noIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         noBuilder.setContentIntent(pendingIntent);
         Notification notification = noBuilder.build();

@@ -10,13 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class WelcomePG extends AppCompatActivity implements DialogInterface.OnClickListener {
     private Intent musicIntent;
@@ -26,12 +24,12 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_pg);
 
-        String email =getIntent().getStringExtra("email");
-        String password= getIntent().getStringExtra("password");
-        String name= getIntent().getStringExtra("name");
+        String user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://carbonjava-4211d-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference myRef = firebaseDatabase.getReference("Users/" + user);
 
-        //musicIntent = new Intent(this,MusicService.class);
-        //startService(musicIntent);
+        musicIntent = new Intent(this,MusicService.class);
+        startService(musicIntent);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
@@ -45,7 +43,7 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
                 case R.id.nav_game:
                     selectedFragment = new GamesFragment();
                     break;
-                case R.id.nav_chat:
+                case R.id.nav_smartgames:
                     selectedFragment = new SmartGamesFragment();
                     break;
                 case R.id.nav_profile:
@@ -57,18 +55,18 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         }
     };
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_one,menu);
-        //bring xml and put it on the activity
-        return super.onCreateOptionsMenu(menu);
-    }
-    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
         switch (item.getItemId()){
-            case R.id.action_settings:
-                intent=new Intent(this, SettingsActivity.class);
-                startActivity(intent);
+            case R.id.action_report:
+                AlertDialog.Builder builder=new AlertDialog.Builder(this);
+                builder.setMessage("Rate this app");
+                builder.setCancelable(false);
+                builder.setNegativeButton("10/10",this);
+                builder.setPositiveButton("it can be better",this);
+                AlertDialog dialog=builder.create();
+                dialog.show();
+                builder.setMessage("thanks for rating");
                 break;
 
             case R.id.action_mybests:
@@ -77,14 +75,14 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
                 break;
 
             case R.id.action_logout:
-                AlertDialog.Builder builder=new AlertDialog.Builder(this);
-                builder.setMessage("are you sure?");
-                builder.setCancelable(false);
-                builder.setPositiveButton("yes",this);
-                builder.setNegativeButton("No", this);
-                AlertDialog dialog=builder.create();
-                dialog.show();
-                intent=new Intent(this, MainActivity.class);
+                AlertDialog.Builder builder2 =new AlertDialog.Builder(this);
+                builder2.setMessage("are you sure?");
+                builder2.setCancelable(false);
+                builder2.setPositiveButton("yes",this);
+                builder2.setNegativeButton("No", this);
+                AlertDialog dialog2=builder2.create();
+                dialog2.show();
+                intent=new Intent(this, LogInActivity.class);
                 startActivity(intent);
                 break;
 

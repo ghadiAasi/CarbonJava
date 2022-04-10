@@ -4,69 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundforgot"
+    android:background="@drawable/backgroundforgotpassword"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="bottom"
     tools:context=".ForgotActivity">
 
 
     <TextView
         android:id="@+id/textViewForgot"
-        android:layout_width="match_parent"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginHorizontal="20dp"
-        android:textSize="25dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
-        android:text="Insert mail/phone number" />
+        android:text="Insert mail"
+        android:textColor="#38B6FF"
+        android:textColorHint="#38B6FF"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/editTextEmailLoginForgot"
-        android:layout_width="371dp"
+        android:layout_width="324dp"
         android:layout_height="59dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
         android:paddingLeft="10dp"
-        android:textColorHint="@color/white"
+        android:textColor="#38B6FF"
+        android:textColorHint="#38B6FF"
         android:textSize="23dp" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
+        android:id="@+id/aboveName"
+        android:layout_width="318dp"
+        android:layout_height="54dp"
 
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginBottom="40dp"
-        android:text="write your email or phone number and we will send you a mail to change your password"
-        android:textColor="@color/white"
+        android:text="write your email and name and we will send you an email to change your password"
+        android:textColor="#38B6FF"
+        android:textColorHint="#38B6FF"
         android:textSize="15dp" />
 
     <EditText
-        android:id="@+id/editTextTextphone"
-        android:layout_width="371dp"
+        android:id="@+id/editTextNameForgot"
+        android:layout_width="324dp"
         android:layout_height="54dp"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginBottom="30dp"
-        android:hint="Phone number"
-        android:inputType="phone"
+        android:hint="User Name"
         android:paddingStart="15dp"
         android:paddingLeft="10dp"
-        android:textColorHint="@color/white"
+        android:textColor="#38B6FF"
+        android:textColorHint="#38B6FF"
         android:textSize="23dp" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="364dp"
+        android:layout_width="305dp"
         android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="115dp"
-        android:background="@drawable/button"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="150dp"
+        android:background="#38B6FF"
         android:onClick="send"
-        android:text="send mail / massage"
-        android:textColor="@color/black"
+        android:text="send mail"
+        android:textColor="#18346B"
         android:textSize="18dp" />
 
 

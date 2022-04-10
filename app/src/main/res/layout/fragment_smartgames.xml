@@ -22,7 +22,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_margin="60dp"
+            android:layout_margin="50dp"
             android:backgroundTint="#E5EEEF"
             app:cardCornerRadius="8sp"
             app:cardElevation="8sp">
@@ -43,7 +43,7 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:layout_margin="60dp"
+            android:layout_margin="50dp"
             android:backgroundTint="#E5EEEF"
             app:cardCornerRadius="8sp"
             app:cardElevation="8sp">

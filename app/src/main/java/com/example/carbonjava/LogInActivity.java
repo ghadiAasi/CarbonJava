@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -17,11 +18,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
+public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener {
     private static final String TAG = "FIREBASE";
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
     private EditText editTextEmail;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         //connects between the values here and
 
         Intent notifyIntent = new Intent(this,NotificationReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast
+        @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getBroadcast
                 (this, NOTIFICATION_REMINDER_NIGHT, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
@@ -52,32 +54,28 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         editTextPassword= findViewById(R.id.editTextPasswordLogin);
         editTextPasswordConform= findViewById(R.id.editTextPasswordLoginConfirm);
 
-        buttonlogin= findViewById(R.id.buttonlogin);
+        buttonlogin = findViewById(R.id.buttonlogin);
         buttonlogin.setOnLongClickListener(this);
+
         SharedPreferences settings = getSharedPreferences("settings",MODE_PRIVATE);
         String email= settings.getString("email"," ");
         String password = settings.getString("password","");
         if(!email.equals("") && !password.equals("")){
             editTextPassword.setText(password);
             editTextEmail.setText(email);
-
-
+            editTextPasswordConform.setText(password);
         }
     }
 
     public void login(View view) {
         email = editTextEmail.getText().toString();
         password = editTextPassword.getText().toString();
-        Intent intent = new Intent(this, WelcomePG.class);
         SharedPreferences settings = getSharedPreferences("settings", MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("email", editTextEmail.getText().toString());
         editor.putString("password", editTextPassword.getText().toString());
-        editor.putString("password", editTextPasswordConform.getText().toString());
 
-        intent.putExtra("email", editTextEmail.getText().toString());
-
-        editor.commit();
+        editor.apply();
         if (!editTextPasswordConform.getText().toString().equals(editTextPassword.getText().toString())) {
             editTextEmail.setText("");
             editTextPassword.setText("");
@@ -87,42 +85,41 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             builder.setMessage("The confirmed password does not match the password");
             AlertDialog dialog = builder.create();
             dialog.show();
-        } else {
-            if(email != null && password != null) {
-                login(email, password);
-            }
+        } else if (email != null && password != null) {
+            login(email, password);
         }
     }
-        public void login(String email,String password){
-            mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "signInWithEmail:success");
-                                Intent intent = new Intent(MainActivity.this,WelcomePG.class);
-                                Toast.makeText(MainActivity.this, "Authentication successed.",
-                                        Toast.LENGTH_SHORT).show();
-                                startActivity(intent);
+    public void login(String email,String password){
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            Intent intent = new Intent(LogInActivity.this,WelcomePG.class);
+                            Toast.makeText(LogInActivity.this, "Authentication successed.",
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
 
-                            } else {
-                                editTextEmail.setText("");
-                                editTextPassword.setText("");
-                                editTextPasswordConform.setText("");
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                Toast.makeText(MainActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                        } else {
+                            editTextEmail.setText("");
+                            editTextPassword.setText("");
+                            editTextPasswordConform.setText("");
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LogInActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
 
-                            }
                         }
-                    });
-        }
+                    }
+                });
+    }
     @Override
     public boolean onLongClick(View view) {
         editTextPassword.setText("");
         editTextEmail.setText("");
+        editTextPasswordConform.setText("");
         return true;
     }
 

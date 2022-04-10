@@ -13,6 +13,7 @@
     <ImageButton
         android:layout_width="48dp"
         android:layout_height="45dp"
+        android:onClick="back"
         android:background="@drawable/exit"
         tools:ignore="ContentDescription" />
 
@@ -33,6 +34,7 @@
             android:textSize="25dp" />
 
         <TextView
+            android:id="@+id/Mistake"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="55dp"
@@ -49,106 +51,109 @@
             android:textSize="20dp" />
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
-        android:onClick="restart"
-        android:background="@drawable/button"
-        android:text="new game"
-        />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="182dp"
+        android:id="@+id/LinerLayout"
+        android:layout_width="402dp"
+        android:layout_height="169dp"
         android:layout_below="@id/sudokuBoard"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="-14dp"
+        android:layout_marginBottom="61dp"
         android:gravity="center"
         android:orientation="horizontal">
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:onClick="BTNOne"
-                android:text="1"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="BTNOne"
+            android:background="#bdc8da"
+            android:text="1"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNTwo"
-                android:text="2"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNTwo"
+            android:background="#bdc8da"
+            android:text="2"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNThree"
-                android:text="3"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNThree"
+            android:background="#bdc8da"
+            android:text="3"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNFour"
-                android:text="4"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNFour"
+            android:background="#bdc8da"
+            android:text="4"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNFive"
-                android:text="5"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNFive"
+            android:background="#bdc8da"
+            android:text="5"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNSix"
-                android:text="6"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNSix"
+            android:background="#bdc8da"
+            android:text="6"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNSeven"
-                android:text="7"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNSeven"
+            android:background="#bdc8da"
+            android:text="7"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNEight"
-                android:text="8"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNEight"
+            android:background="#bdc8da"
+            android:text="8"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
 
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:onClick="BTNNine"
-                android:text="9"
-                android:textColor="#485e83"
-                android:textSize="25dp" />
-        </LinearLayout>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:onClick="BTNNine"
+            android:background="#bdc8da"
+            android:text="9"
+            android:textColor="#485e83"
+            android:textSize="25dp" />
+    </LinearLayout>
 
     <com.example.carbonjava.SudokuBoard
         android:id="@+id/sudokuBoard"
@@ -165,5 +170,21 @@
         tools:layout_editor_absoluteY="0dp">
 
     </com.example.carbonjava.SudokuBoard>
+
+    <Button
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/abovebar"
+        android:layout_alignBottom="@+id/LinerLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="157dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="565dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="-38dp"
+        android:background="@drawable/button"
+        android:onClick="restart"
+        android:text="new game" />
 
 </RelativeLayout>

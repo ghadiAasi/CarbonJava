@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="top"
     android:background="@drawable/backgroundloginpage"
-    tools:context=".MainActivity">
+    tools:context=".LogInActivity">
 
     <EditText
         android:id="@+id/editTextEmailLogin"

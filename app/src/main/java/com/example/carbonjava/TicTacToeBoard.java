@@ -9,11 +9,13 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-public class TickTackToeBoard extends View {
+public class TicTacToeBoard extends View {
 
     private final int boardColor;
     private final int XColor;
@@ -25,7 +27,7 @@ public class TickTackToeBoard extends View {
     private final TicTacToeBrains game;
     private int cellSize = getWidth()/3;
 
-    public TickTackToeBoard(Context context, @Nullable AttributeSet attrs) {
+    public TicTacToeBoard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         game = new TicTacToeBrains();
@@ -41,9 +43,6 @@ public class TickTackToeBoard extends View {
         }finally {
             a.recycle();
         }
-
-
-
     }
     @Override
     protected void onMeasure(int width, int height){
@@ -54,14 +53,13 @@ public class TickTackToeBoard extends View {
 
 
         setMeasuredDimension(dimension, dimension);
-
-
     }
 
     @Override
     protected  void onDraw(Canvas canvas){
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
+
         drawGameBoard(canvas);
         drawMarkers(canvas);
 
@@ -190,14 +188,15 @@ public class TickTackToeBoard extends View {
             }
         }
     }
-    public void setUpGame(Button playAgain, Button home, TextView playerTurn, TextView Xwinning,TextView Owinning){
+
+    public void setUpGame(Button playAgain, Button home, TextView playerTurn, TextView Xwinning, TextView Owinning){
         game.setPlayAgainBtn(playAgain);
         game.setHomeBtn(home);
         game.setPlayerTurn(playerTurn);
         game.setCountWinX(Xwinning);
         game.setCountWinY(Owinning);
-
     }
+
     public void resetGame(){
         game.resetGame();
         winningLine = false;

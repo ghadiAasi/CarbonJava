@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnLongClickListener {
     private static final String TAG = "FIREBASE";
@@ -25,15 +26,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnLongClic
     private EditText editTextEmail;
     private EditText editTextPassword;
     private EditText editTextPhone;
-    private Button buttonSigned;
-    private boolean guest;
     private FirebaseAuth mAuth;
 
     public String name;
-    public String userName;
-    public String phone;
-    public String email;
-    public String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +41,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnLongClic
         editTextUserName =findViewById(R.id.editTextUserNameSignin);
         editTextName =findViewById(R.id.editTextNameSignin);
         editTextPhone = findViewById(R.id.editTextPhoneSignin);
-        buttonSigned = findViewById(R.id.buttonSigned);
-
-        Intent intent = new Intent(this,WelcomePG.class);
-        SharedPreferences settings = getSharedPreferences("settings",MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("email",editTextEmail.getText().toString());
-        editor.commit();
-        intent.putExtra("email",editTextPassword.getText().toString());
     }
 
     public void welcome(View view) {
-        signup(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+        signup(editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextName.getText().toString());
     }
-    public void signup(String name,String password){
+
+    public void signup(String name,String password, String fullname){
         mAuth.createUserWithEmailAndPassword(name, password)
                 .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -70,6 +58,16 @@ public class SignUpActivity extends AppCompatActivity implements View.OnLongClic
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent i =new Intent(SignUpActivity.this, WelcomePG.class);
                             startActivity(i);
+
+                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(fullname).build();
+                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                            firebaseUser.updateProfile(profileChangeRequest).addOnCompleteListener((userUpdateTask)->{
+                                if(userUpdateTask.isSuccessful()){
+                                    Toast.makeText(SignUpActivity.this, "User created successfully!",Toast.LENGTH_SHORT).show();
+                                    SignUpActivity.this.finish();
+                                }
+                            });
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -79,15 +77,19 @@ public class SignUpActivity extends AppCompatActivity implements View.OnLongClic
                     }
                 });
     }
+
     @Override
     public boolean onLongClick(View view) {
+        editTextUserName.setText("");
+        editTextName.setText("");
+        editTextPhone.setText("");
         editTextPassword.setText("");
         editTextEmail.setText("");
         return true;
     }
 
     public void loginFsign(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, LogInActivity.class);
         startActivity(intent);
     }
 }

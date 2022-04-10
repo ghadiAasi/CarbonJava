@@ -14,17 +14,14 @@ public class InterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inter);
     }
 
+
+
     public void interacccount(View view) {
-        Intent Intent = new Intent(this,MainActivity.class);
+        Intent Intent = new Intent(this, LogInActivity.class);
         startActivity(Intent);
     }
     public void signup(View view) {
         Intent intent = new Intent(this,SignUpActivity.class);
-        startActivity(intent);
-    }
-    public void guest(View view) {
-        Intent intent = new Intent(this,WelcomePG.class);
-
         startActivity(intent);
     }
 }

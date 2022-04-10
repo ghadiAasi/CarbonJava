@@ -17,17 +17,13 @@
             android:name=".MathGames"
             android:exported="true" />
         <activity
-            android:name=".SettingsActivity"
-            android:exported="true"
-            android:label="@string/title_activity_settings" />
-        <activity
             android:name=".SudokuActivity"
             android:exported="true" />
         <activity
-            android:name=".SmartGames"
+            android:name=".SmartGamesActivty"
             android:exported="true" />
         <activity
-            android:name=".TickTack"
+            android:name=".TicTacToeActivity"
             android:exported="true" />
 
         <service
@@ -37,12 +33,6 @@
             android:name=".MusicService"
             android:enabled="true"
             android:exported="true" />
-
-        <activity
-            android:name=".BarActivityWelcome"
-            android:exported="true"
-            android:label="@string/title_activity_bar_welcome"
-            android:theme="@style/Theme.CarbonJava.NoActionBar" />
         <activity
             android:name=".ForgotActivity"
             android:exported="true" />
@@ -62,7 +52,7 @@
             android:name=".WelcomePG"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LogInActivity"
             android:exported="true" />
         <activity
             android:name=".InterActivity"

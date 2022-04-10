@@ -3,10 +3,10 @@ package com.example.carbonjava;
 public class Item {
     private String description;
     private String key; //image id to be loaded
-    private int level;
+    private String level;
     private String pic;
 
-    public Item(String pic,String gameName,String key,int level){
+    public Item(String pic,String gameName,String key,String level){
         this.pic =pic;
         this.description = gameName;
         this.key = key;
@@ -39,11 +39,11 @@ public class Item {
     }
 
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 

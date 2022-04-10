@@ -7,9 +7,9 @@
     android:title="games"
     />
     <item
-        android:id="@+id/nav_chat"
+        android:id="@+id/nav_smartgames"
         android:icon="@drawable/ic_baseline_dashboard_customize_24"
-        android:title="smartgmaes" />
+        android:title="smart games" />
 
     <item
         android:id="@+id/nav_profile"

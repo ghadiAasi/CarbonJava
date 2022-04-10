@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 public class TicTacToeBrains {
     private int[][] board;
-    //public final int NUM = 3;
     private Button playAgainBtn;
     private Button homeBtn;
     private TextView playerTurn;
@@ -38,6 +37,7 @@ public class TicTacToeBrains {
 
             playAgainBtn.setVisibility(View.GONE);
             homeBtn.setVisibility(View.GONE);
+
             playerTurn.setText("TicTacToe game");
     }
 
@@ -117,7 +117,6 @@ public class TicTacToeBrains {
             }
             this.tieGame= false;
             return true;
-
         }
         else if(isfull()){
             playAgainBtn.setVisibility(View.VISIBLE);

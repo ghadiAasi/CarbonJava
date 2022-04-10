@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#bdc8da"
-    tools:context=".TickTack">
+    tools:context=".TicTacToeActivity">
 
-    <ImageButton
+    <Button
+        android:id="@+id/homeButton"
         android:layout_width="48dp"
         android:layout_height="45dp"
         android:background="@drawable/exit"
@@ -25,42 +26,19 @@
         app:layout_constraintVertical_bias="0.861">
 
         <Button
-            android:id="@+id/homeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:background="@drawable/button"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/playAgainButton"
-            app:layout_constraintHorizontal_bias="0.592"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
             android:id="@+id/playAgainButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play Again"
-            android:padding="5dp"
-            android:visibility="gone"
             android:background="@drawable/button"
+            android:padding="5dp"
+            android:text="Play Again"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.752"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -71,11 +49,12 @@
         android:layout_marginTop="20dp"
         android:text="TicTacToe game"
         android:textSize="20dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.carbonjava.TickTackToeBoard
+    <com.example.carbonjava.TicTacToeBoard
         android:id="@+id/ticTacToeBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,11 +73,12 @@
         android:id="@+id/WinningX"
         android:layout_width="123dp"
         android:layout_height="64dp"
-        android:layout_marginStart="16dp"
         android:text="x winning: 0"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTicTac"
         app:layout_constraintVertical_bias="1.0" />
@@ -116,18 +96,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textTicTac"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/screenshot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:text="screen shot"
+    <TextView
+        android:id="@+id/clockTicTac"
+        android:layout_width="81dp"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="00:00"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/WinningY"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTicTac"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/textTicTac"
+        app:layout_constraintVertical_bias="0.935"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -4,10 +4,9 @@ import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
-import android.provider.MediaStore;
 
 public class MusicService extends Service {
-      //  MediaPlayer mediaPlayer;
+    MediaPlayer mediaPlayer;
     public MusicService() {
     }
 
@@ -19,19 +18,19 @@ public class MusicService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        //mediaPlayer = MediaPlayer.create(this,R.raw.supermario);
-        //mediaPlayer.setLooping(true);
-        //mediaPlayer.setVolume(100,100);
+        mediaPlayer = MediaPlayer.create(this,R.raw.supermario);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.setVolume(50,50);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-       // mediaPlayer.start();
+        mediaPlayer.start();
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
-     //   mediaPlayer.stop();
+        mediaPlayer.stop();
     }
 }
