@@ -117,7 +117,7 @@ public class TicTacToeActivity extends AppCompatActivity implements View.OnClick
         }
     }
     private void wins(){
-        if(wins>3){
+        if(wins>1){
             screenshot();
         }
     }
