@@ -16,7 +16,6 @@ import androidx.core.app.NotificationManagerCompat;
  * a service on a separate handler thread.
  * <p>
  * <p>
- * TODO: Change class to work for more than one to deal with
  * helper methods.
  */
 public class NotificationService extends IntentService {

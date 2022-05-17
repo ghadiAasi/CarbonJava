@@ -69,9 +69,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:onClick="BTNOne"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="1"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -79,9 +79,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNTwo"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="2"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -89,9 +89,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNThree"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="3"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -99,9 +99,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNFour"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="4"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -109,9 +109,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNFive"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="5"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -119,9 +119,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNSix"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="6"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -129,9 +129,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNSeven"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="7"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -139,9 +139,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNEight"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="8"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
 
         <Button
@@ -149,9 +149,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
             android:onClick="BTNNine"
-            android:background="#bdc8da"
+            android:background="#21a2dd"
             android:text="9"
-            android:textColor="#485e83"
+            android:textColor="#bdc8da"
             android:textSize="25dp" />
     </LinearLayout>
 
@@ -161,11 +161,11 @@
         android:layout_height="438dp"
         android:layout_below="@+id/abovebar"
         custom:boardSColor="#000000"
-        custom:cellFillColor="#e8cdcd"
-        custom:cellsHighlightColor="#ead5de"
+        custom:cellFillColor="#0d4058"
+        custom:cellsHighlightColor="#69bfe8"
         custom:letterColor="@color/black"
-        custom:letterColorPlaced="#00ff00"
-        custom:letterColorPlacedMistakes="@color/white"
+        custom:letterColorPlaced="#72a64b"
+        custom:letterColorPlacedMistakes="#c93702"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 

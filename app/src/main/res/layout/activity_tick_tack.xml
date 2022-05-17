@@ -66,7 +66,7 @@
         app:layout_constraintVertical_bias="0.325"
         custom:boardColor="#112233"
         custom:winningLineColor="@color/black"
-        custom:oColor="#ebc2cb"
+        custom:oColor="#252ED5"
         custom:xColor="#4c395b" />
 
     <TextView

@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,7 +28,7 @@ public class WelcomePG extends AppCompatActivity implements DialogInterface.OnCl
         DatabaseReference myRef = firebaseDatabase.getReference("Users/" + user);
 
         musicIntent = new Intent(this,MusicService.class);
-        startService(musicIntent);
+        //startService(musicIntent);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);

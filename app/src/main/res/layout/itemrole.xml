@@ -3,33 +3,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:gravity="center"
+    android:background=""
     android:descendantFocusability="blocksDescendants"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageItem"
-        android:layout_width="322dp"
-        android:layout_height="447dp"
-        android:src="@drawable/download"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/download" />
 
     <TextView
         android:id="@+id/gameName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="#bdc8da"
         android:text="description"
         android:textSize="24dp" />
 
 
     <Button
         android:id="@+id/itemButtonDelete"
-        android:layout_width="164dp"
-        android:layout_height="wrap_content"
-        android:background="#1a4703"
-        android:onClick="cameraArray"
-        android:text="delete"
-        android:textColor="@color/white"
-        />
+        android:layout_width="67dp"
+        android:layout_height="66dp"
+        android:background="@drawable/ic_baseline_delete_24"
+        android:onClick="cameraArray" />
+
+
 
 </LinearLayout>

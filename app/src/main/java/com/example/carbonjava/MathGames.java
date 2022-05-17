@@ -65,28 +65,28 @@ public class MathGames extends AppCompatActivity implements DialogInterface.OnCl
         levelMath.setText(l);
 
         if(((int) ((Math.random()) * 19)) % 6 == 0) {
-            BTNFirst.setText(""+this.answer+"");
+            BTNFirst.setText(""+((int)this.answer)+"");
             whichButton =1;
-            BTNSecond.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNThird.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNFourth.setText(""+((int) ((Math.random()) * 1000))+".0");
+            BTNSecond.setText(""+((int) ((Math.random()) * 1000)));
+            BTNThird.setText(""+((int) ((Math.random()) * 1000)));
+            BTNFourth.setText(""+((int) ((Math.random()) * 1000)));
         }else if(((int) ((Math.random()) * 19)) % 5 == 0){
-            BTNFirst.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNSecond.setText(""+this.answer+"");
+            BTNFirst.setText(""+((int) ((Math.random()) * 1000)));
+            BTNSecond.setText(""+((int)this.answer)+"");
             whichButton =2;
-            BTNThird.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNFourth.setText(""+((int) ((Math.random()) * 1000))+".0");
+            BTNThird.setText(""+((int) ((Math.random()) * 1000)));
+            BTNFourth.setText(""+((int) ((Math.random()) * 1000)));
         }else if(((int) ((Math.random()) * 19)) % 2 == 0){
-            BTNFirst.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNSecond.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNThird.setText(""+this.answer+"");
+            BTNFirst.setText(""+((int) ((Math.random()) * 1000)));
+            BTNSecond.setText(""+((int) ((Math.random()) * 1000)));
+            BTNThird.setText(""+((int)this.answer)+"");
             whichButton =3;
-            BTNFourth.setText(""+((int) ((Math.random()) * 1000))+".0");
+            BTNFourth.setText(""+((int) ((Math.random()) * 1000)));
         }else{
-            BTNFirst.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNSecond.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNThird.setText(""+((int) ((Math.random()) * 1000))+".0");
-            BTNFourth.setText(""+this.answer+"");
+            BTNFirst.setText(""+((int) ((Math.random()) * 1000)));
+            BTNSecond.setText(""+((int) ((Math.random()) * 1000)));
+            BTNThird.setText(""+((int) ((Math.random()) * 1000)));
+            BTNFourth.setText(""+((int)this.answer)+"");
             whichButton =4;
         }
     }
@@ -127,23 +127,23 @@ public class MathGames extends AppCompatActivity implements DialogInterface.OnCl
             if (((int) ((Math.random()) * 19)) % 6 == 0) {
                 if (((int) ((Math.random()) * 19)) % 2 != 0) {
                     answer = x / y;
-                    question = (x + " " + "/" + " " + y + " =?");
+                    question = (x + " / " + y + " =?");
                 }
 
             } else if (((int) ((Math.random()) * 19)) % 5 != 0) {
                 answer = y * x;
-                question = (x + " " + "*" + " " + y + " =?");
+                question = (x + " * " + y + " =?");
             } else if (((int) ((Math.random()) * 19)) % 3 != 0) {
                 if (((int) ((Math.random()) * 19)) % 2 != 0) {
                     answer = x - y;
-                    question = (x + " " + "-" + " " + y + " =?");
+                    question = (x + " - " + y + " =?");
                 } else {
                     answer = y - x;
-                    question = (y + " " + "-" + " " + x + " =?");
+                    question = (y + " - " + x + " =?");
                 }
             } else {
                 answer = y + x;
-                question = (y + " " + "+" + " " + x + " =?");
+                question = (y + " + " + x + " =?");
             }
         }
         else{
@@ -165,22 +165,22 @@ public class MathGames extends AppCompatActivity implements DialogInterface.OnCl
             } else if (((int) ((Math.random()) * 19)) % 5 != 0) {
                 if (((int) ((Math.random()) * 19)) % 2 != 0) {
                     answer = (z * x)/y;
-                    question = (z + " * " + x + " / "+ y+ " =?");
+                    question = ("( "+ z + " * " + x +" )" + " / "+ y+ " =?");
                 } else {
                     answer = (z*y)/x;
-                    question = (z + " * " + y + " / "+ x+ " =?");
+                    question = ("( " + z + " * " + y +" )"+ " / "+ x+ " =?");
                 }
             } else if (((int) ((Math.random()) * 19)) % 3 != 0) {
                 if (((int) ((Math.random()) * 19)) % 2 != 0) {
                     answer = (x - y)/z;
-                    question = (x + " " + "-" + " " + y + " / "+z+" =?");
+                    question = ("( "+ x + " - " + y +" )"+ " / "+z+" =?");
                 } else {
                     answer = (x-y)*z;
-                    question = (x + " - " + y + " * "+ z+ " =?");
+                    question = ("( "+ x + " - " + y +" )"+ " * "+ z+ " =?");
                 }
             } else {
                 answer = z + y + x;
-                question = (x + " " + "+" +" "+ z + " " + y + " =?");
+                question = (x + " + "+ z + " + " + y + " =?");
             }
         }
 
@@ -198,7 +198,7 @@ public class MathGames extends AppCompatActivity implements DialogInterface.OnCl
     }
 
     public void back(View view) {
-        Intent intent = new Intent(this, SmartGamesFragment.class);
+        Intent intent = new Intent(this, SmartGamesActivty.class);
         startActivity(intent);
     }
 

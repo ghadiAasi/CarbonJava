@@ -96,6 +96,7 @@ public class ProfileFragment extends Fragment {
         return rootView;
 
     }
+
     private void refreshList(List<Item> items){
         CustomLevelAdapter adapter = new CustomLevelAdapter(getActivity() ,R.layout.list_item_level, items);
         listView.setAdapter(adapter);
